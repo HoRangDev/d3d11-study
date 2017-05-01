@@ -12,21 +12,24 @@
     <ClCompile Include="..\..\..\Sources\main.cpp">
       <Filter>Examples</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Sources\Example.cpp">
+    <ClCompile Include="..\..\Sources\Example.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Sources\App.cpp">
+    <ClCompile Include="..\..\Sources\main.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\App.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Sources\Example.h">
+    <ClInclude Include="..\..\Sources\BasicInc.h">
       <Filter>Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Sources\App.h">
+    <ClInclude Include="..\..\Sources\Example.h">
       <Filter>Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Sources\BasicInc.h">
+    <ClInclude Include="..\..\Sources\App.h">
       <Filter>Sources</Filter>
     </ClInclude>
   </ItemGroup>
