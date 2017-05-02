@@ -38,7 +38,7 @@ private:
     IDXGISwapChain* m_swapChain;
     D3D_FEATURE_LEVEL m_featureLevel;
     ID3D11RenderTargetView* m_renderTargetView;
-
+    ID3D11DepthStencilView* m_depthStencilView;
 };
 
 LRESULT CALLBACK WndProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );

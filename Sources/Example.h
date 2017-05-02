@@ -18,6 +18,14 @@ public:
     void SetImmediateContext( ID3D11DeviceContext* context );
     void SetSwapChain( IDXGISwapChain* swapChain );
     void SetRenderTargetView( ID3D11RenderTargetView* renderTargetView );
+    void SetDepthStencilView( ID3D11DepthStencilView* depthStencilView );
+    void SetViewport( Viewport viewport );
+    void SetViewport( float topLeftX, float topLeftY, float width, float height, float minDepth, float maxDepth );
+    void SetWidth( uint32 width );
+    void SetHeight( uint32 height );
+    void SetViewportFitOnWindow( );
+
+    inline Viewport GetViewport( ) const { return m_viewport; }
 
 private:
     std::wstring m_name;
@@ -31,6 +39,8 @@ private:
     ID3D11DeviceContext* m_immediateContext;
     IDXGISwapChain* m_swapChain;
     ID3D11RenderTargetView* m_renderTargetView;
+    ID3D11DepthStencilView* m_depthStencilView;
+    Viewport m_viewport;
 
 };
 

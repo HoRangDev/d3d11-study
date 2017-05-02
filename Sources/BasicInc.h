@@ -12,3 +12,5 @@
 
 using uint32 = unsigned int;
 using uint64 = unsigned long long;
+
+using Viewport = D3D11_VIEWPORT;
