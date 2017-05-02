@@ -11,6 +11,10 @@ App::App( ExamplePtr runningExample, uint32 width, uint32 height ) :
 
 App::~App( )
 {
+    m_depthStencilView->Release( );
+    m_renderTargetView->Release( );
+    m_immediateContext->Release( );
+    m_device->Release( );
 }
 
 int App::Run( )
