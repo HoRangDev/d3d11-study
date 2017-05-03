@@ -27,7 +27,7 @@ public:
 
     inline Viewport GetViewport( ) const { return m_viewport; }
 
-private:
+protected:
     std::wstring m_name;
 
     HWND m_windowHandle;
