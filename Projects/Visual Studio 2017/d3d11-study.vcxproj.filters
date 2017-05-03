@@ -18,6 +18,9 @@
     <ClCompile Include="..\..\Sources\main.cpp">
       <Filter>Examples</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Sources\BasicExample.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Sources\BasicInc.h">
@@ -28,6 +31,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Sources\App.h">
       <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\BasicExample.h">
+      <Filter>Examples</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

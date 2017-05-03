@@ -14,3 +14,5 @@ using uint32 = unsigned int;
 using uint64 = unsigned long long;
 
 using Viewport = D3D11_VIEWPORT;
+
+#define SAFE_RELEASE(r) {if(r!=nullptr) r->Release(); r=nullptr;}

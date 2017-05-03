@@ -11,10 +11,10 @@ App::App( ExamplePtr runningExample, uint32 width, uint32 height ) :
 
 App::~App( )
 {
-    m_depthStencilView->Release( );
-    m_renderTargetView->Release( );
-    m_immediateContext->Release( );
-    m_device->Release( );
+    SAFE_RELEASE( m_depthStencilView );
+    SAFE_RELEASE( m_renderTargetView );
+    SAFE_RELEASE( m_immediateContext );
+    SAFE_RELEASE( m_device );
 }
 
 int App::Run( )
@@ -25,10 +25,8 @@ int App::Run( )
     m_isRunning = true;
 
     MSG msg{ 0 };
-    std::chrono::system_clock::time_point begin = std::chrono::system_clock::now( );
-    std::chrono::seconds deltaTime = 
-        std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now( ) - begin);
 
+    double deltaTimeVal = 0.0;
     while ( m_isRunning )
     {
         if ( PeekMessage( &msg, 0, 0, 0, PM_REMOVE ) )
@@ -38,11 +36,11 @@ int App::Run( )
         }
         else
         {
-            begin = std::chrono::system_clock::now( );
-            ( *m_example ).Update( deltaTime.count( ) );
+            std::chrono::system_clock::time_point begin = std::chrono::system_clock::now( );
+            ( *m_example ).Update( deltaTimeVal );
             ( *m_example ).Render( );
-            deltaTime = std::chrono::duration_cast<std::chrono::seconds>
-                ( std::chrono::system_clock::now( ) - begin );
+            std::chrono::duration<double> deltaTime = std::chrono::system_clock::now( ) - begin;
+            deltaTimeVal = deltaTime.count( );
         }
     }
 
@@ -56,30 +54,19 @@ void App::Exit( )
 
 void App::InitWin32( )
 {
-    WNDCLASS wc;
-    wc.style = CS_HREDRAW | CS_VREDRAW;
+    std::wstring title = ( *m_example ).GetName( );
+    WNDCLASS wc{ NULL };
+    wc.style = CS_OWNDC;
     wc.lpfnWndProc = (WndProc);
-    wc.cbClsExtra = 0;
-    wc.cbWndExtra = 0;
-    wc.hCursor = LoadCursor( 0, IDC_ARROW );
-    wc.lpszClassName = ( *m_example ).GetName( ).c_str( );
-
+    wc.hCursor = LoadCursor( nullptr, IDC_ARROW );
+    wc.lpszClassName = title.c_str( );
     RegisterClass( &wc );
 
-    m_windowHandle = CreateWindow( wc.lpszClassName,
-                                   wc.lpszClassName,
-                                   WS_OVERLAPPEDWINDOW,
-                                   CW_USEDEFAULT,
-                                   CW_USEDEFAULT,
-                                   m_width,
-                                   m_height,
-                                   0,
-                                   0,
-                                   nullptr,
-                                   0 );
+    m_windowHandle = CreateWindow( title.c_str( ), title.c_str( ),
+                                   WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_VISIBLE,
+                                   CW_USEDEFAULT, CW_USEDEFAULT, m_width, m_height,
+                                   nullptr, nullptr, nullptr, nullptr );
 
-    ShowWindow( m_windowHandle, 0 );
-    UpdateWindow( m_windowHandle );
 }
 
 void App::InitD3D( )
@@ -105,7 +92,7 @@ void App::InitD3D( )
     sd.SampleDesc.Quality = 0;
     sd.Windowed = true;
 
-    D3D11CreateDeviceAndSwapChain( nullptr,
+    auto hr = D3D11CreateDeviceAndSwapChain( nullptr,
                                    D3D_DRIVER_TYPE_HARDWARE,
                                    nullptr,
                                    createDeviceFlags,
