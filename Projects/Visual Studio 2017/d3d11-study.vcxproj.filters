@@ -4,36 +4,56 @@
     <Filter Include="Sources">
       <UniqueIdentifier>{600e8627-2f8a-417d-be31-56951ea26bf0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Examples">
+    <Filter Include="Sources\Applications">
+      <UniqueIdentifier>{6c28a081-d0d8-4e0e-803b-c31d035e8fd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Examples">
       <UniqueIdentifier>{7af65868-a565-4b54-8a99-fa858921eb0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Shaders">
+      <UniqueIdentifier>{1d79150a-7fcf-480c-aec6-6e120ca65623}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Sources\Example.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="..\..\Sources\BasicExample.cpp">
+      <Filter>Sources\Examples</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Sources\App.cpp">
-      <Filter>Sources</Filter>
+      <Filter>Sources\Applications</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Example.cpp">
+      <Filter>Sources\Applications</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Sources\main.cpp">
-      <Filter>Examples</Filter>
+      <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Sources\BasicExample.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Sources\TriangleExample.cpp">
+      <Filter>Sources\Examples</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Sources\BasicInc.h">
-      <Filter>Sources</Filter>
+    <ClInclude Include="..\..\Sources\BasicExample.h">
+      <Filter>Sources\Examples</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Sources\Example.h">
-      <Filter>Sources</Filter>
+      <Filter>Sources\Applications</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Sources\App.h">
-      <Filter>Sources</Filter>
+      <Filter>Sources\Applications</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Sources\BasicExample.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Sources\BasicInc.h">
+      <Filter>Sources\Applications</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Sources\TriangleExample.h">
+      <Filter>Sources\Examples</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\..\Sources\Shaders\SimpleVertexShader.hlsl">
+      <Filter>Sources\Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\Sources\Shaders\SimplePixelShader.hlsl">
+      <Filter>Sources\Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

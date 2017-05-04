@@ -37,7 +37,7 @@ int App::Run( )
         else
         {
             std::chrono::system_clock::time_point begin = std::chrono::system_clock::now( );
-            ( *m_example ).Update( deltaTimeVal );
+            ( *m_example ).Update( static_cast< float >( deltaTimeVal ) );
             ( *m_example ).Render( );
             std::chrono::duration<double> deltaTime = std::chrono::system_clock::now( ) - begin;
             deltaTimeVal = deltaTime.count( );
