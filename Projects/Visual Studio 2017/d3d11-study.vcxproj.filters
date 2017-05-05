@@ -13,6 +13,18 @@
     <Filter Include="Sources\Shaders">
       <UniqueIdentifier>{1d79150a-7fcf-480c-aec6-6e120ca65623}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\Rendering">
+      <UniqueIdentifier>{f832dbc1-3df2-4983-8f30-0671310eaffd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Rendering\Resources">
+      <UniqueIdentifier>{282176a4-ca0e-474e-86cc-f27d6e1738c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Rendering\Resources\Textures">
+      <UniqueIdentifier>{2d7c7005-3572-4454-aaef-6f90c40cf64c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Rendering\Resources\Buffers">
+      <UniqueIdentifier>{0aec17af-a9d4-45c1-b5d6-1a971a7f204f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Sources\BasicExample.cpp">
@@ -30,6 +42,10 @@
     <ClCompile Include="..\..\Sources\TriangleExample.cpp">
       <Filter>Sources\Examples</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Sources\Resource.cpp">
+      <Filter>Sources\Rendering\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Buffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Sources\BasicExample.h">
@@ -46,6 +62,18 @@
     </ClInclude>
     <ClInclude Include="..\..\Sources\TriangleExample.h">
       <Filter>Sources\Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\RendererDX11.h">
+      <Filter>Sources\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Resource.h">
+      <Filter>Sources\Rendering\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\ResourceProxy.h">
+      <Filter>Sources\Rendering\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Buffer.h">
+      <Filter>Sources\Rendering\Resources\Buffers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

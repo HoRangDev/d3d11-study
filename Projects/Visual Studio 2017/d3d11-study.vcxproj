@@ -165,15 +165,21 @@
   <ItemGroup>
     <ClCompile Include="..\..\Sources\App.cpp" />
     <ClCompile Include="..\..\Sources\BasicExample.cpp" />
+    <ClCompile Include="..\..\Sources\Buffer.cpp" />
     <ClCompile Include="..\..\Sources\Example.cpp" />
     <ClCompile Include="..\..\Sources\main.cpp" />
+    <ClCompile Include="..\..\Sources\Resource.cpp" />
     <ClCompile Include="..\..\Sources\TriangleExample.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Sources\App.h" />
     <ClInclude Include="..\..\Sources\BasicExample.h" />
     <ClInclude Include="..\..\Sources\BasicInc.h" />
+    <ClInclude Include="..\..\Sources\Buffer.h" />
     <ClInclude Include="..\..\Sources\Example.h" />
+    <ClInclude Include="..\..\Sources\RendererDX11.h" />
+    <ClInclude Include="..\..\Sources\Resource.h" />
+    <ClInclude Include="..\..\Sources\ResourceProxy.h" />
     <ClInclude Include="..\..\Sources\TriangleExample.h" />
   </ItemGroup>
   <ItemGroup>
