@@ -24,8 +24,12 @@ using uint32 = unsigned int;
 using uint64 = unsigned long long;
 using Viewport = D3D11_VIEWPORT;
 
+template <typename T>
+using ComPtr = Microsoft::WRL::ComPtr<T>;
 using DevicePtr = Microsoft::WRL::ComPtr<ID3D11Device>;
 using DeviceContextPtr = Microsoft::WRL::ComPtr<ID3D11DeviceContext>;
+using D3D11DebuggerPtr = ComPtr<ID3D11Debug>;
+
 using RTVPtr = Microsoft::WRL::ComPtr<ID3D11RenderTargetView>;
 using DSVPtr = Microsoft::WRL::ComPtr<ID3D11DepthStencilView>;
 

@@ -45,7 +45,12 @@
     <ClCompile Include="..\..\Sources\Resource.cpp">
       <Filter>Sources\Rendering\Resources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Sources\Buffer.cpp" />
+    <ClCompile Include="..\..\Sources\Buffer.cpp">
+      <Filter>Sources\Rendering\Resources\Buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\RendererDX11.cpp">
+      <Filter>Sources\Rendering</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Sources\BasicExample.h">
